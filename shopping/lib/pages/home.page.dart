@@ -1,6 +1,4 @@
 
-
-
 import 'package:flutter/material.dart';
 import 'package:shopping/pages/produtos.page.dart';
 
@@ -168,6 +166,9 @@ Widget produtoItem(BuildContext context) {
     child: Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
+ //=> GestureDetector essa linha serve para quando o cliente clicar na img ele navega para a pag de detalhes do produto
+ //context precisa ser declarado dentro do  () produtoItem e do  produtoLista() e passar dentro do ()
+
         GestureDetector(
           onTap: () {
             Navigator.push(context,

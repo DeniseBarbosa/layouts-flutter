@@ -25,7 +25,42 @@ class PaginaProdutos extends StatelessWidget {
             )
           ];
         },
-        body: Container(),
+        body: ListView(
+          children: <Widget>[
+            Padding(
+              padding: EdgeInsets.only(
+                top: 10,
+                left: 10,
+                right: 10,
+              ),
+              child: Text(
+                "Camisa de manga longa",
+                style: TextStyle(
+                  fontSize: 26,
+                  fontWeight: FontWeight.bold,
+                ),
+              ),
+            ),
+            Padding(
+              padding: EdgeInsets.all(10),
+              child: Text("By Nike"),
+            ),
+            Padding(
+              padding: EdgeInsets.all(10),
+              child: Text(
+                "Detalhes",
+                style: TextStyle(
+                  fontWeight: FontWeight.bold,
+                ),
+              ),
+            ),
+            Padding(
+              padding: EdgeInsets.all(10),
+              child: Text(
+                  "O Nike Dri-FIT é um tecido de poliéster projetado para ajudar você a se manter seco, para que você possa trabalhar mais confortavelmente por mais tempo.."),
+            ),
+          ],
+        ),
       ),
     );
   }

@@ -1,6 +1,8 @@
 import 'dart:ffi';
 
 import 'package:flutter/material.dart';
+import 'package:shopping/pages/home.page.dart';
+import 'package:shopping/pages/pagina.cadastro.dart';
 
 class LoginPage extends StatelessWidget {
   const LoginPage({super.key});
@@ -10,7 +12,6 @@ class LoginPage extends StatelessWidget {
     return Scaffold(
       body: SingleChildScrollView(
         child: Container(
-          color: Colors.amber,
           padding: EdgeInsets.only(
             top: 80,
             left: 20,
@@ -20,10 +21,10 @@ class LoginPage extends StatelessWidget {
           child: Column(
             children: [
               Container(
-                height: 450,
+                height: 480,
                 decoration: BoxDecoration(
                   //ele fAZ A estilização das bordas
-                  color: Colors.white,
+                  color: Color.fromARGB(255, 243, 236, 236),
                   boxShadow: [
                     new BoxShadow(
                       //sombra na borda
@@ -58,7 +59,13 @@ class LoginPage extends StatelessWidget {
                             ],
                           ),
                           TextButton(
-                              onPressed: () {},
+                              onPressed: () {
+                                Navigator.push(
+                                    context,
+                                    MaterialPageRoute(
+                                        builder: (context) =>
+                                            PaginaCadastro()));
+                              },
                               child: Text(
                                   'Cadastrar')) //=> fica fora da coluna alinhado
                         ],
@@ -99,7 +106,9 @@ class LoginPage extends StatelessWidget {
                         child: TextButton(
                             onPressed: () {}, child: Text("Esqueci a senha")),
                       ),
-
+                      SizedBox(
+                        height: 10,
+                      ),
                       Container(
                         width: double.infinity,
                         child: TextButton(
@@ -111,7 +120,12 @@ class LoginPage extends StatelessWidget {
                                   RoundedRectangleBorder(
                                 borderRadius: BorderRadius.circular(5),
                               ))),
-                          onPressed: () {},
+                          onPressed: () {
+                            Navigator.push(
+                                context,
+                                MaterialPageRoute(
+                                    builder: (context) => PaginaInicial()));
+                          },
                           child: Text(
                             'Entrar',
                             style: TextStyle(color: Colors.white),

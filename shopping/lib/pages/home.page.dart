@@ -1,4 +1,8 @@
+
+
+
 import 'package:flutter/material.dart';
+import 'package:shopping/pages/produtos.page.dart';
 
 class PaginaInicial extends StatelessWidget {
   const PaginaInicial({super.key});
@@ -55,7 +59,7 @@ class PaginaInicial extends StatelessWidget {
             ),
             Container(
               height: 350,
-              child: produtoLista(),
+              child: produtoLista(context),
             ),
           ],
         ),
@@ -141,21 +145,21 @@ Widget ItemCategoria() {
   );
 }
 
-Widget produtoLista() {
+Widget produtoLista(BuildContext context) {
   return Container(
     child: ListView(
       scrollDirection: Axis.horizontal,
       children: [
-        produtoItem(),
-        produtoItem(),
-        produtoItem(),
-        produtoItem(),
+        produtoItem(context),
+        produtoItem(context),
+        produtoItem(context),
+        produtoItem(context),
       ],
     ),
   );
 }
 
-Widget produtoItem() {
+Widget produtoItem(BuildContext context) {
   return Container(
     padding: EdgeInsets.all(10),
     margin: EdgeInsets.all(5),
@@ -164,11 +168,17 @@ Widget produtoItem() {
     child: Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
-        Image.asset(
-          "assets/images/product-1.png",
-          width: 170,
-          height: 170,
-          fit: BoxFit.cover, //=> padroniza todos os tamanhos das imgs
+        GestureDetector(
+          onTap: () {
+            Navigator.push(context,
+                MaterialPageRoute(builder: (context) => PaginaProdutos()));
+          },
+          child: Image.asset(
+            "assets/images/product-1.png",
+            width: 170,
+            height: 170,
+            fit: BoxFit.cover, //=> padroniza todos os tamanhos das imgs
+          ),
         ),
         SizedBox(
           height: 10,

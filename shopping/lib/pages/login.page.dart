@@ -1,5 +1,3 @@
-import 'dart:ffi';
-
 import 'package:flutter/material.dart';
 import 'package:shopping/pages/home.page.dart';
 import 'package:shopping/pages/pagina.cadastro.dart';
@@ -121,10 +119,10 @@ class LoginPage extends StatelessWidget {
                                 borderRadius: BorderRadius.circular(5),
                               ))),
                           onPressed: () {
-                            Navigator.push(
-                                context,
-                                MaterialPageRoute(
-                                    builder: (context) => PaginaInicial()));
+                            //Navigator.push(
+                            //  context,
+                            // MaterialPageRoute(
+                            //   builder: (context) => PaginaInicial()));
                           },
                           child: Text(
                             'Entrar',

@@ -1,8 +1,8 @@
-
 import 'package:flutter/material.dart';
 import 'package:shopping/pages/produtos.page.dart';
 import 'package:shopping/widgets/buscar.dart';
 import 'package:shopping/widgets/categoria/categoria.item.dart';
+import 'package:shopping/widgets/categoria/categoria.lista.dart';
 
 class PaginaInicial extends StatelessWidget {
   const PaginaInicial({super.key});
@@ -34,7 +34,7 @@ class PaginaInicial extends StatelessWidget {
             ),
             Container(
               height: 90,
-              child: ListaCategoria(),
+              child: CategoriaLista(),
             ),
             SizedBox(
               height: 30,
@@ -68,24 +68,6 @@ class PaginaInicial extends StatelessWidget {
   }
 }
 
-
-
-Widget ListaCategoria() {
-  return Container(
-    child: ListView(
-      scrollDirection: Axis.horizontal,
-      children: [
-        CategoriaItem(imagem: "assets/images/Icon_Devices.png"), //=>passando img => arquivo categoria.item.dart
-        CategoriaItem(imagem: "assets/images/Icon_Gadgets.png"),
-        CategoriaItem(imagem: "assets/images/Icon_Gaming.png"),
-        CategoriaItem(imagem: "assets/images/Icon_Mens_Shoe.png"),
-        CategoriaItem(imagem: "assets/images/Icon_Womens_Shoe.png"),
-      ],
-    ),
-  );
-}
-
-
 Widget produtoLista(BuildContext context) {
   return Container(
     child: ListView(
@@ -109,8 +91,8 @@ Widget produtoItem(BuildContext context) {
     child: Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
- //=> GestureDetector essa linha serve para quando o cliente clicar na img ele navega para a pag de detalhes do produto
- //context precisa ser declarado dentro do  () produtoItem e do  produtoLista() e passar dentro do ()
+        //=> GestureDetector essa linha serve para quando o cliente clicar na img ele navega para a pag de detalhes do produto
+        //context precisa ser declarado dentro do  () produtoItem e do  produtoLista() e passar dentro do ()
 
         GestureDetector(
           onTap: () {

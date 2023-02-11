@@ -2,6 +2,7 @@
 import 'package:flutter/material.dart';
 import 'package:shopping/pages/produtos.page.dart';
 import 'package:shopping/widgets/buscar.dart';
+import 'package:shopping/widgets/categoria/categoria.item.dart';
 
 class PaginaInicial extends StatelessWidget {
   const PaginaInicial({super.key});
@@ -74,39 +75,16 @@ Widget ListaCategoria() {
     child: ListView(
       scrollDirection: Axis.horizontal,
       children: [
-        ItemCategoria(),
-        ItemCategoria(),
-        ItemCategoria(),
-        ItemCategoria(),
-        ItemCategoria(),
+        CategoriaItem(imagem: "assets/images/Icon_Devices.png"), //=>passando img => arquivo categoria.item.dart
+        CategoriaItem(imagem: "assets/images/Icon_Gadgets.png"),
+        CategoriaItem(imagem: "assets/images/Icon_Gaming.png"),
+        CategoriaItem(imagem: "assets/images/Icon_Mens_Shoe.png"),
+        CategoriaItem(imagem: "assets/images/Icon_Womens_Shoe.png"),
       ],
     ),
   );
 }
 
-Widget ItemCategoria() {
-  return Container(
-    width: 70,
-    height: 70,
-    margin: EdgeInsets.all(10),
-    padding: EdgeInsets.all(10),
-    decoration: BoxDecoration(
-      color: Colors.white,
-      boxShadow: [
-        new BoxShadow(
-          color: Colors.black12,
-          offset: new Offset(1, 1),
-          blurRadius: 5,
-          spreadRadius: 2,
-        )
-      ],
-      borderRadius: BorderRadius.all(
-        Radius.circular(64),
-      ),
-    ),
-    child: Image.asset("assets/images/Icon_Devices.png"),
-  );
-}
 
 Widget produtoLista(BuildContext context) {
   return Container(

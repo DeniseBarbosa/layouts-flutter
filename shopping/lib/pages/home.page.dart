@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:shopping/pages/produtos.page.dart';
 import 'package:shopping/widgets/buscar.dart';
-import 'package:shopping/widgets/categoria/categoria.item.dart';
 import 'package:shopping/widgets/categoria/categoria.lista.dart';
+import 'package:shopping/widgets/produtos/produtos.carrinho.dart';
 
 class PaginaInicial extends StatelessWidget {
   const PaginaInicial({super.key});
@@ -73,16 +73,20 @@ Widget produtoLista(BuildContext context) {
     child: ListView(
       scrollDirection: Axis.horizontal,
       children: [
-        produtoItem(context),
-        produtoItem(context),
-        produtoItem(context),
-        produtoItem(context),
+        Produtocarrinho(titulo: "Escreva algo aqui", descricao: "Escreva algo aqui", imagem: "", preco: 150,
+        ),
+         Produtocarrinho(titulo: "Escreva algo aqui", descricao: "Escreva algo aqui", imagem: "", preco: 150,
+        ),
+         Produtocarrinho(titulo: "Escreva algo aqui", descricao: "Escreva algo aqui", imagem: "", preco: 150,
+        ),
+         Produtocarrinho(titulo: "Escreva algo aqui", descricao: "Escreva algo aqui", imagem: "", preco: 150,
+        ),
       ],
     ),
   );
 }
 
-Widget produtoItem(BuildContext context) {
+
   return Container(
     padding: EdgeInsets.all(10),
     margin: EdgeInsets.all(5),

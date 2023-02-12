@@ -1,6 +1,17 @@
 import 'package:flutter/material.dart';
 
 class PaginaProdutos extends StatelessWidget {
+  final String imagem;
+  final String titulo;
+  final String descricao;
+  final double preco;
+
+  PaginaProdutos(
+      {required this.imagem,
+      required this.titulo,
+      required this.descricao,
+      required this.preco});
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -17,7 +28,7 @@ class PaginaProdutos extends StatelessWidget {
                 //=>efeito sanfona
                 centerTitle: true,
                 background: Image.asset(
-                  "assets/images/product-10.png",
+                  imagem,
                   width: double.infinity,
                   fit: BoxFit.fitWidth,
                 ),
@@ -34,7 +45,7 @@ class PaginaProdutos extends StatelessWidget {
                 right: 10,
               ),
               child: Text(
-                "Camisa de manga longa",
+                titulo,
                 style: TextStyle(
                   fontSize: 26,
                   fontWeight: FontWeight.bold,
@@ -43,7 +54,7 @@ class PaginaProdutos extends StatelessWidget {
             ),
             Padding(
               padding: EdgeInsets.all(10),
-              child: Text("By Nike"),
+              child: Text(descricao),
             ),
             Padding(
               padding: EdgeInsets.all(10),
